@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  private URL = 'http://localhost:3000/api';
+  private URL = 'https://api.tuasambleavirtual.com/api';
 
   constructor(private http: HttpClient, private router: Router) {}
 

@@ -1,58 +1,54 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Router } from "@angular/router";
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GraficasService {
- 
-  private URL = 'http://localhost:3000/api' 
+  private URL = 'https://api.tuasambleavirtual.com/api';
 
-  constructor( 
-    private http: HttpClient,
-    private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {}
 
-    quorum() {
-      return this.http.get<any>(this.URL + '/quorum' );
-    }
+  quorum() {
+    return this.http.get<any>(this.URL + '/quorum');
+  }
 
-    quorumadmin(ID) {
-      return this.http.post<any>(this.URL + '/quorum', ID );
-    }
+  quorumadmin(ID) {
+    return this.http.post<any>(this.URL + '/quorum', ID);
+  }
 
-    qcrearvotacion(ID) {
-      return this.http.post<any>(this.URL + '/crearvotacion', ID );
-    }
+  qcrearvotacion(ID) {
+    return this.http.post<any>(this.URL + '/crearvotacion', ID);
+  }
 
-    qvotacioninfo(ID) {
-      return this.http.post<any>(this.URL + '/votacioninfo', ID );
-    }
+  qvotacioninfo(ID) {
+    return this.http.post<any>(this.URL + '/votacioninfo', ID);
+  }
 
-    resultadoVotaciones(ID) {
-      return this.http.post<any>(this.URL + '/resultadovotaciones', ID );
-    }
-    resultadoVotacionessave(ID) {
-      return this.http.post<any>(this.URL + '/resultadovotacionessave', ID );
-    }
-    resultadoVotacionesquorum(ID) {
-      return this.http.post<any>(this.URL + '/resultadovotacionesquo', ID );
-    }
+  resultadoVotaciones(ID) {
+    return this.http.post<any>(this.URL + '/resultadovotaciones', ID);
+  }
+  resultadoVotacionessave(ID) {
+    return this.http.post<any>(this.URL + '/resultadovotacionessave', ID);
+  }
+  resultadoVotacionesquorum(ID) {
+    return this.http.post<any>(this.URL + '/resultadovotacionesquo', ID);
+  }
 
-    resultadoVotacionesquorumq(ID) {
-      return this.http.post<any>(this.URL + '/resultadovotacionesquoq', ID );
-    }
-    resultadovotacionesquoq
-    
-    resultadoVotacionesdos(ID) {
-      return this.http.post<any>(this.URL + '/resultadovotacionesdos', ID ); 
-    } 
+  resultadoVotacionesquorumq(ID) {
+    return this.http.post<any>(this.URL + '/resultadovotacionesquoq', ID);
+  }
+  resultadovotacionesquoq;
 
-    votacionesActivar(ID) {
-      return this.http.post<any>(this.URL + '/votacionesactivar', ID );
-    }
-    votacionesDesactivar(ID) {
-      return this.http.post<any>(this.URL + '/votacionesdesactivar', ID );
-    }
+  resultadoVotacionesdos(ID) {
+    return this.http.post<any>(this.URL + '/resultadovotacionesdos', ID);
+  }
+
+  votacionesActivar(ID) {
+    return this.http.post<any>(this.URL + '/votacionesactivar', ID);
+  }
+  votacionesDesactivar(ID) {
+    return this.http.post<any>(this.URL + '/votacionesdesactivar', ID);
+  }
 }
- 

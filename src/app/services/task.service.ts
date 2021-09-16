@@ -1,65 +1,63 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TaskService {
+  private URL = 'https://api.tuasambleavirtual.com/api';
 
-  private URL = 'http://localhost:3000/api' 
+  constructor(private http: HttpClient) {}
 
-  constructor( private http: HttpClient) { }
-
-  getTasks(){
-    return this.http.get<any>(this.URL + '/tasks')
+  getTasks() {
+    return this.http.get<any>(this.URL + '/tasks');
   }
 
-  postUserInfo(){
-    return this.http.post<any>(this.URL + '/registroInicial',{})
+  postUserInfo() {
+    return this.http.post<any>(this.URL + '/registroInicial', {});
   }
 
-  getPrivateTasks(){
-    return this.http.get<any>(this.URL + '/private-tasks')
+  getPrivateTasks() {
+    return this.http.get<any>(this.URL + '/private-tasks');
   }
 
-  getDataInfo(){
-    return this.http.get<any>(this.URL + '/infoUser') 
+  getDataInfo() {
+    return this.http.get<any>(this.URL + '/infoUser');
   }
 
-   getDataInfoUser(){
-    return this.http.get<any>(this.URL + '/infoUserUser') 
+  getDataInfoUser() {
+    return this.http.get<any>(this.URL + '/infoUserUser');
   }
 
-  getDataAsistenciaUser(){
-    return this.http.get<any>(this.URL + '/dataasistenciauser') 
+  getDataAsistenciaUser() {
+    return this.http.get<any>(this.URL + '/dataasistenciauser');
   }
 
-  getDataAsistenciaUserTiem(){
-    return this.http.get<any>(this.URL + '/dataasistenciausertiem') 
+  getDataAsistenciaUserTiem() {
+    return this.http.get<any>(this.URL + '/dataasistenciausertiem');
   }
 
-  getDataInfoAsamblea(){
-    return this.http.get<any>(this.URL + '/DataInfoAsamblea')
+  getDataInfoAsamblea() {
+    return this.http.get<any>(this.URL + '/DataInfoAsamblea');
   }
 
-  getDataInfoAsambleas(){
-    return this.http.get<any>(this.URL + '/DataInfoAsambleas')
+  getDataInfoAsambleas() {
+    return this.http.get<any>(this.URL + '/DataInfoAsambleas');
   }
 
-  getDataInfoAsambleasDocument(){
-    return this.http.get<any>(this.URL + '/DataInfoAsambleadocumes')
+  getDataInfoAsambleasDocument() {
+    return this.http.get<any>(this.URL + '/DataInfoAsambleadocumes');
   }
 
-  getDataInfoAsambleasVotaciones(){
-    return this.http.get<any>(this.URL + '/DataInfoAsambleavotaciones')
+  getDataInfoAsambleasVotaciones() {
+    return this.http.get<any>(this.URL + '/DataInfoAsambleavotaciones');
   }
 
-  getDataInfoAsambleasVotacion(data){
-    return this.http.post<any>(this.URL + '/DataInfoAsambleavotacion',data)
+  getDataInfoAsambleasVotacion(data) {
+    return this.http.post<any>(this.URL + '/DataInfoAsambleavotacion', data);
   }
 
-  getDataInfoAsambleasVotacionmulti(data){
-    return this.http.post<any>(this.URL + '/DataInfoAsambleavotacionmulti',data)
+  getDataInfoAsambleasVotacionmulti(data) {
+    return this.http.post<any>(this.URL + '/DataInfoAsambleavotacionmulti', data);
   }
 }
-

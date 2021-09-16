@@ -1,21 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UploadService {
+  private URL = 'https://api.tuasambleavirtual.com/api';
 
-  private URL = 'http://localhost:3000/api' 
+  constructor(private http: HttpClient) {}
 
-  constructor( private http: HttpClient) { }
-
-  uploadfiles(formData){
-    return this.http.post(this.URL + '/upload',formData)
+  uploadfiles(formData) {
+    return this.http.post(this.URL + '/upload', formData);
   }
 
-  uploadfilesAsamblea(asamblea){
-    return this.http.post(this.URL + '/agregarAsamblea', asamblea)
+  uploadfilesAsamblea(asamblea) {
+    return this.http.post(this.URL + '/agregarAsamblea', asamblea);
   }
 }
- 

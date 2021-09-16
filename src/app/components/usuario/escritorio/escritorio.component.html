@@ -1,0 +1,97 @@
+<div class="row">
+    <div class="col-md-6 mx-auto" align="center">
+        <img src="{{imagenes.logoEpmresa}}" class="card-img-top" alt="..." >
+        <img src="{{imagenes.logoConjunto}}" class="card-img-top" alt="..." >
+        <br>
+        <br>
+        <div class="card">
+            <div class="card-header">
+                {{tasks.nombres}} {{tasks.apellidos}}
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item" >
+                        Torre: {{tasks.torre}}- Apartamento: {{tasks.apartamento}}
+                    </li>
+                    <li class="list-group-item" >
+                        Documento: {{tasks.documento}} 
+                    </li>
+                    <li class="list-group-item" >
+                        Correo: {{tasks.correo}} 
+                    </li>
+                    <li class="list-group-item" >
+                        Telefono: {{tasks.numeroCelular}} 
+                    </li>
+                    <li class="list-group-item" >
+                        <button  class="btn btn-primary btn-sm asd" (click)="hora()" >Hora de Ingreso:</button> 
+                        <br>
+                        <br>
+                        {{horaAsistida}} 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mx-auto" align="center">
+        <br>
+        <br>
+    
+        <br>
+        <div class="row">
+            <div class="col-md-5 mx-auto" align="right">
+                <img src="/assets/digital catRecurso 1.png" class="card-img-top" style="width: 28%;" alt="..." >
+    
+            </div>
+            <div class="col-md-7 mx-auto" align="left">
+                <a class="boton-zoom" [href]="sanitize(meetingNumber)"  target="_blank" >Entrar a la Reunion</a>
+    
+            </div>
+        </div>
+       
+        <br>
+        
+        
+        <app-graficas></app-graficas>
+
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-6 mx-auto" align="center" >
+        <h1>Archivos</h1>
+        <cdk-virtual-scroll-viewport itemSize=400 class="container"> 
+            <app-documentos ></app-documentos>
+        </cdk-virtual-scroll-viewport>
+       
+    </div>
+    <div class="col-md-6 mx-auto justify-content-center" align="center">
+        <h1>Votacion</h1>
+       <app-votar></app-votar>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+   
+    <div class="col-md-12 mx-auto" align="center">
+        <h1>Resultado Votaciones</h1>
+      
+    </div>
+    
+</div>
+<br>
+<br>
+<h1 style="text-align: center;">Votaciones <button type="button" class="btn btn-default" (click)="actualizarvotaciones()">Refrescar</button> </h1>
+<div class="row" *ngFor="let ids of idVotacion" >
+  
+  <div class="col-md-9 mx-auto" align="center" >
+    <app-votacionesusuario [ids]="ids"></app-votacionesusuario>
+
+    <br>
+  <br>
+  </div>
+  
+</div>
+<div class="linea"></div>
+<br>

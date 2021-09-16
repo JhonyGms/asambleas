@@ -1,0 +1,51 @@
+.card{
+    border-color: #1a1a1a;
+}
+
+.card-header{
+    border-color: #1a1a1a;
+    font-size: 22px;
+    color: #1a1a1a;
+    
+}
+
+.card-body{
+    border-color: #1a1a1a;
+}
+
+.form-control:focus{
+    border-color: #1a1a1a;
+    color: #1a1a1a;
+    box-shadow: #1a1a1a;
+    border: 0px solid #1a1a1a;
+}
+
+.card-img-top{
+    width: 50%;
+}
+
+.boton-zoom {
+    
+    background-color: #2D8CFF;
+    color: #ffffff;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;  
+    padding-left: 40px;
+    padding-right: 40px;
+    display: inline-block;
+    border-radius: 10px;
+  }
+  
+  button:hover {
+    background-color: #2681F2;
+  }
+  
+
+  .asd:hover {
+      background-color: #55595c;
+  }
+
+  .container{
+    height: 500px;
+}
